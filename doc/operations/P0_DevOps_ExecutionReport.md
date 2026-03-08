@@ -3,7 +3,8 @@
 **执行人：** DevOps / SRE
 **执行日期：** 2026-03-09
 **对应工作计划：** `doc/operations/P0_DevOps_WorkPlan.md`
-**状态：** ✅ 全部完成（待 GitHub 推送）
+**状态：** ✅ 全部完成并推送至 GitHub
+**仓库地址：** https://github.com/Ryan-Chiao/tickwingbirding（Public）
 
 ---
 
@@ -31,10 +32,9 @@
 
 | Commit | 说明 |
 |--------|------|
-| `59202ca` | chore: initialize Tickwing monorepo scaffold |
-| `847d09c` | chore: remove legacy directories from git tracking |
-| `2011c2e` | chore: sync updated .gitignore, README and PRD doc |
-| `c234cfe` | feat: add shared-types, docker env, CI pipeline and ADR review |
+| `初始提交` | chore: initialize Tickwing monorepo scaffold（clean history 重建） |
+
+> 注：本地历史在推送前经过重建（移除旧项目文件污染），以干净单次 commit 推送至 GitHub。
 
 ---
 
@@ -64,8 +64,13 @@
 ### T0-6 CI/CD 流水线
 
 - [x] `.github/workflows/ci.yml` 完成
-- [ ] PR 创建后自动触发 CI（需推送到 GitHub 后验证）
-- [ ] GitHub 分支保护规则配置（T0-6-2，待推送后在 GitHub 界面操作）
+- [x] 仓库已推送至 GitHub（Public，92 objects，130 KB）
+- [x] GitHub 分支保护规则已配置（T0-6-2）
+  - `main`：require PR + 1 approve + status check
+  - `develop`：require PR + 1 approve + status check
+  - 仓库已设为 Public，规则已生效（Enforced）
+- [ ] PR 创建后 CI 自动触发（首次 PR 时验证）
+- [ ] Status check 名称待首次 CI 运行后在分支保护规则中补填
 
 ### T0-2 ADR Review
 
@@ -78,15 +83,16 @@
 
 ## 待处理事项
 
-| 优先级 | 事项 | 负责人 | 截止 |
-|--------|------|--------|------|
-| P0 | 推送仓库到 GitHub | 产品负责人 | M0 前 |
-| P0 | GitHub 分支保护规则（T0-6-2） | DevOps | 推送后立即 |
-| P1 | ADR-009 变量名对齐（`.env.example` 修正） | DevOps + 后端 Lead | Phase 1 启动前 |
-| P1 | 环境分层文档 `EnvironmentSpec.md` | DevOps + 后端 Lead | M1 前 |
-| P1 | RS256 密钥占位变量补充至 `.env.example` | 后端 Lead | Phase 1 启动前 |
-| P2 | Worker Dockerfile 基础镜像选型确认 | DevOps + 后端 Lead | Phase 2 前 |
-| P2 | `docker compose up -d` 后端 Lead 验收 | 后端 Lead | T0-5 验收 |
+| 优先级 | 事项 | 负责人 | 状态 | 截止 |
+|--------|------|--------|------|------|
+| P0 | 推送仓库到 GitHub | 产品负责人 | ✅ 完成 | — |
+| P0 | GitHub 分支保护规则（T0-6-2） | DevOps | ✅ 完成 | — |
+| P0 | CI Status check 补填（首次 PR 后） | DevOps | 🔲 待触发 | 首次 PR 时 |
+| P1 | ADR-009 变量名对齐（`.env.example` 修正） | DevOps + 后端 Lead | 🔲 待确认 | Phase 1 启动前 |
+| P1 | 环境分层文档 `EnvironmentSpec.md` | DevOps + 后端 Lead | 🔲 待确认 | M1 前 |
+| P1 | RS256 密钥占位变量补充至 `.env.example` | 后端 Lead | 🔲 待确认 | Phase 1 启动前 |
+| P2 | Worker Dockerfile 基础镜像选型确认 | DevOps + 后端 Lead | 🔲 待确认 | Phase 2 前 |
+| P2 | `docker compose up -d` 后端 Lead 验收 | 后端 Lead | 🔲 待验收 | T0-5 验收 |
 
 ---
 
@@ -103,4 +109,4 @@
 
 ---
 
-*报告生成日期：2026-03-09 | DevOps / SRE*
+*报告生成日期：2026-03-09 | 最后更新：2026-03-09 | DevOps / SRE*
