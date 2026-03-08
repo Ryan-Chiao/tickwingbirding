@@ -1,0 +1,51 @@
+# ===== Legacy directories (pre-existing, not part of Tickwing) =====
+LocalBirdAi/
+BirdVideoClassifier/
+classified_videos_runs/
+classified_videos_fullscan_runs/
+downloads/
+.obsidian/
+.claude/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+.next/
+out/
+
+# Turbo
+.turbo/
+
+# Uploads / media
+uploads/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test / Coverage
+coverage/
+*.lcov
+
+# TypeScript
+*.tsbuildinfo
